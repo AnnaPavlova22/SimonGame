@@ -1,7 +1,11 @@
 let gamePattern = [];
+
 let  userClickedPattern = [];
+
 let gameStarted = false;
+
 let level = 0;
+
 const buttonColors = ["red", "blue", "green", "yellow"];
 
 $('.start-button').click(function(){
@@ -55,6 +59,7 @@ function nextSequence() {
   .fadeOut(100)
   .fadeIn(100);
   playSound(randomChosenColor);
+  
 }
 
 function startOver(){
@@ -73,4 +78,5 @@ function animatePress(currentColor){
   setTimeout(function(){
     $("."+ currentColor).removeClass("pressed");
   },100);
+  
 }
