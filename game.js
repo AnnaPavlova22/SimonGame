@@ -1,14 +1,10 @@
 let gamePattern = [];
-
 let  userClickedPattern = [];
-
 let gameStarted = false;
-
 let level = 0;
-
 const buttonColors = ["red", "blue", "green", "yellow"];
 
-$(document).keypress(function(){
+$('.start-button').click(function(){
   if (!gameStarted){
     $("h1").text("Level:" + level);
     nextSequence();
@@ -39,7 +35,7 @@ function checkAnswer(currentLevel) {
     setTimeout(function() {
       $("body").removeClass("game-over");
     },200);
-    $("h1").text("Game Over." + "Level:" + level + ". Press any key to restart");
+    $("h1").text("Game Over.\n" + "Level:" + level + ". Press Start button to restart");
     console.log("wrong");
     startOver();
   }
@@ -59,7 +55,6 @@ function nextSequence() {
   .fadeOut(100)
   .fadeIn(100);
   playSound(randomChosenColor);
-  
 }
 
 function startOver(){
@@ -78,10 +73,4 @@ function animatePress(currentColor){
   setTimeout(function(){
     $("."+ currentColor).removeClass("pressed");
   },100);
-  
 }
-
-
-
-
-
